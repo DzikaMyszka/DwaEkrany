@@ -34,7 +34,13 @@ public class SummaryActivity extends AppCompatActivity {
         tvSummary.setText("Imię: " + name + "\nE-mail: " + email + "\nKurs: " + course + "\nPoziom: " + level + "/10\nNewsletter: " + news);
 
         findViewById(R.id.btnEdit).setOnClickListener(v -> finish());
-        findViewById(R.id.btnConfirm).setOnClickListener(v -> finish()); // na razie tylko zamyka
-        findViewById(R.id.btnShare).setOnClickListener(v -> {}); // na razie nic
+        findViewById(R.id.btnConfirm).setOnClickListener(v -> {
+            String number = "ZG/" + (1000 + new java.util.Random().nextInt(9000));
+            Intent result = new Intent();
+            result.putExtra(EXTRA_NUMBER, number);
+            setResult(RESULT_OK, result);
+            finish();
+        });
+        findViewById(R.id.btnShare).setOnClickListener(v -> {});
     }
 }
