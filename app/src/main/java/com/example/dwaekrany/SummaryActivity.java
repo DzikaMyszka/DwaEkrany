@@ -41,6 +41,15 @@ public class SummaryActivity extends AppCompatActivity {
             setResult(RESULT_OK, result);
             finish();
         });
-        findViewById(R.id.btnShare).setOnClickListener(v -> {});
+        findViewById(R.id.btnShare).setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, tvSummary.getText().toString());
+            try {
+                startActivity(Intent.createChooser(intent, "Udostępnij przez"));
+            } catch (android.content.ActivityNotFoundException e) {
+                android.widget.Toast.makeText(this, "Brak aplikacji", android.widget.Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
