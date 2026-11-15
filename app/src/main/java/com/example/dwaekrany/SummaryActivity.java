@@ -42,9 +42,9 @@ public class SummaryActivity extends AppCompatActivity {
             finish();
         });
         findViewById(R.id.btnShare).setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_TEXT, tvSummary.getText().toString());
+            Intent intent1 = new Intent(Intent.ACTION_SEND);
+            intent1.setType("text/plain");
+            intent1.putExtra(Intent.EXTRA_TEXT, tvSummary.getText().toString());
             try {
                 startActivity(Intent.createChooser(intent, "Udostępnij przez"));
             } catch (android.content.ActivityNotFoundException e) {
