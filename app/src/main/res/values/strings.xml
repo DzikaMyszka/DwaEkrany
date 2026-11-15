@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DwaEkrany</string>
+    <string-array name="courses">
+        <item>Programowanie w Javie</item>
+        <item>Aplikacje mobilne</item>
+        <item>Bazy danych</item>
+    </string-array>
 </resources>
